@@ -1,0 +1,18 @@
+package templates
+
+templ Hello(name string) {
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<title>{ name }</title>
+		</head>
+		<body>
+			for i := range 20 {
+				<div>(#{ i }) Hello, <b>{ name }</b></div>
+			}
+			if name == "Sam" {
+				<p>Test</p>
+			}
+		</body>
+	</html>
+}
