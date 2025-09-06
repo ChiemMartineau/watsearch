@@ -19,6 +19,8 @@
               gotools
               gopls
               just
+              sqlc
+              goose
             ];
           };
         }
