@@ -1,0 +1,21 @@
+services:
+  db:
+    image: postgres
+    container_name: watsearch-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+
+  meilisearch:
+    image: getmeili/meilisearch:v1.16
+    ports:
+      - 7700:7700
+    environment:
+      MEILI_MASTER_KEY: Password
+    volumes:
+      - ./data/meiliseach:/meili_dat
